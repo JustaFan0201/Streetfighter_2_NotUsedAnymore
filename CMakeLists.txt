@@ -18,7 +18,14 @@ list(TRANSFORM INCLUDE_FILES PREPEND ${INCLUDE_DIR}/)
 add_executable(${PROJECT_NAME}
     ${SRC_DIR}/main.cpp
     ${SRC_FILES}
+        src/StartScene.cpp
+        src/SceneManager.cpp
     ${HEADER_FILES}
+        include/StartScene.hpp
+        include/SceneManager.hpp
+        src/Scene.cpp
+        src/SlectScene.cpp
+        include/SlectScene.hpp
 )
 
 if(MSVC)
