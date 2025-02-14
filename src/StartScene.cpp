@@ -67,10 +67,10 @@ namespace Util {
                     soundEffect->Play(0);
                     mode = 1;
                 }
-
                 //ENTER放開後進入SenseEnd
                 if (Input::IsKeyDown(Keycode::RETURN)) {
                     soundEffect->Play(0);
+                    SDL_Delay(600);
                     SenseEnd = true;
                 }
             }

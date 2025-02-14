@@ -26,18 +26,17 @@ namespace Util {
             m_SceneStack.top()->Update();
         }
 
-        if (!m_SceneStack.empty() && m_SceneStack.top()->getSenseEnd()) {
+        if (!m_SceneStack.empty() && m_SceneStack.top()->getSenseEnd() && typeid(*m_SceneStack.top()) == typeid(StartScene)) {
             mode = m_SceneStack.top()->getmode(); // 取得 mode
             std::cout << "Mode selected: " << mode << std::endl;
 
             // 根據 mode 切換到對應的場景
             std::shared_ptr<Scene> nextScene;
             if (mode == 0) {
-                //nextScene = std::make_shared<SlectScene>();  // 切換到 Story 模式
+                nextScene = std::make_shared<SlectScene>();  // 切換到 Story 模式
             } else {
-                //nextScene = std::make_shared<SlectScene>(); // 切換到 Battle 模式
+                nextScene = std::make_shared<SlectScene>(); // 切換到 Battle 模式
             }
-
             ChangeScene(nextScene);
         }
     }

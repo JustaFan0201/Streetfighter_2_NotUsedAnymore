@@ -16,15 +16,15 @@ namespace Util {
             100
         );
         Core::Context::GetInstance()->ScaleAnimationToWindow(m_Animation);//調整動畫大小符合視窗
-        m_BGM = std::make_shared<BGM>("../music/title.mp3");
-        m_BGM->SetVolume(15);  // 設定音量
-        m_BGM->DelayedPlayAsync(2000, -1); // 延遲播放
-        soundEffect->SetVolume(30);
+        m_BGM = std::make_shared<BGM>("../music/03 Player Select.mp3");
+        m_BGM->SetVolume(20);  // 設定音量
+        m_BGM->Play(-1); // 播放
+
     }
 
     void SlectScene::Update() {
         // 確保動畫已經播放足夠時間
-        if (Time::GetElapsedTimeMs() - start > 4000) {
+        /*if (Time::GetElapsedTimeMs() - start > 4000) {
 
             // 狀態1:等待玩家按下 ENTER 進入選擇模式
             if (m_WaitingForEnter) {
@@ -67,7 +67,7 @@ namespace Util {
                     SenseEnd = true;
                 }
             }
-        }
+        }*/
     }
     void SlectScene::Render() {
         // 在這裡渲染動畫的當前幀
