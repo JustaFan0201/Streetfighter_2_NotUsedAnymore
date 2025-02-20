@@ -7,6 +7,7 @@
 #include <memory>
 #include "Util/Animation.hpp"
 #include "Util/BGM.hpp"
+#include <iostream>
 #include "Core/Context.hpp"
 #include "Util/Input.hpp"
 #include "Util/Logger.hpp"

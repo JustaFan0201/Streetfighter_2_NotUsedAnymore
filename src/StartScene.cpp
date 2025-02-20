@@ -78,9 +78,9 @@ namespace Util {
     }
     void StartScene::Render() {
         // 在這裡渲染動畫的當前幀
-        Transform transform_3;
-        transform_3.SetPosition(0.0f, 0.0f);  // 設定圖片顯示位置
-        m_Animation->Draw(transform_3, 0.0f);         // 畫出當前幀
+        Transform transform;
+        transform.SetPosition(0.0f, 0.0f);  // 設定圖片顯示位置
+        m_Animation->Draw(transform, 0.0f);         // 畫出當前幀
     }
 
 }
