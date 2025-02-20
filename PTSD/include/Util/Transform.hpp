@@ -38,9 +38,17 @@ struct Transform {
      * It is represented as a 2D vector.
      */
     glm::vec2 scale = {1, 1};
-   void SetPosition(float x, float y) {
-    translation = glm::vec2(x, y);
-   }
+    void SetPosition(float x, float y) {
+     translation = glm::vec2(x, y);
+    }
+
+    // **新增重載函數**
+    void SetPosition(glm::vec2 pos) {
+     translation = pos;
+    }
+    glm::vec2 GetPosition() {
+       return translation;
+    }
 };
 
 } // namespace Util

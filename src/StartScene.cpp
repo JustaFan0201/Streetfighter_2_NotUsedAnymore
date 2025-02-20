@@ -7,7 +7,7 @@
 namespace Util {
     StartScene::StartScene(){}
     void StartScene::Init() {
-        m_Animation = std::make_shared<Animation>(
+        m_Animation.animation = std::make_shared<Animation>(
             std::vector<std::string> {//每一張動畫圖片
                 "../sencepicture/start/start_1.png",
                 "../sencepicture/start/start_2.png",
@@ -18,7 +18,7 @@ namespace Util {
             false,
             100
         );
-        Core::Context::GetInstance()->ScaleAnimationToWindow(m_Animation);//調整動畫大小符合視窗
+        Core::Context::GetInstance()->ScaleAnimationToWindow(m_Animation.animation);//調整動畫大小符合視窗
         m_BGM = std::make_shared<BGM>("../music/title.mp3");
         m_BGM->SetVolume(15);  // 設定音量
         m_BGM->DelayedPlayAsync(2000, -1); // 延遲播放
@@ -38,7 +38,7 @@ namespace Util {
                     Word_1.transform.SetPosition(-180, -180);
                     Word_2.transform.SetPosition(180, -180);
                     soundEffect->Play(0);
-                    m_Animation = std::make_shared<Animation>(
+                    m_Animation.animation = std::make_shared<Animation>(
                         std::vector<std::string> {
                             "../sencepicture/start/start_4.png"
                         },
@@ -77,11 +77,8 @@ namespace Util {
         }
     }
     void StartScene::Render() {
-        // 在這裡渲染動畫的當前幀
-        Transform transform;
-        transform.SetPosition(0.0f, 0.0f);  // 設定圖片顯示位置
-        m_Animation->Draw(transform, 0.0f);         // 畫出當前幀
+        m_Animation.transform.SetPosition(0.0f, 0.0f);  // 設定圖片顯示位置
+        m_Animation.animation->Draw(m_Animation.transform, 0.0f);         // 畫出當前幀
     }
-
 }
 // namespace Util

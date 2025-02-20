@@ -8,10 +8,6 @@
 
 #include "Scene.hpp"
 namespace Util {
-    struct Word{
-        std::shared_ptr<Text> text;
-        Transform transform;
-    };
     class StartScene : public Scene {
     private:
         bool m_WaitingForEnter=true;
