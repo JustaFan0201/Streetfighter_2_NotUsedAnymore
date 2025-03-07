@@ -1,4 +1,6 @@
 https://github.com/Garvin2009/01-1_generate_paper
+
+https://drive.google.com/file/d/1d8ZbsnuWn4_7Bp7zUhLUck542Gz2ty3a/view?usp=drivesdk
 # PTSD Template
 
 This is a [PTSD](https://github.com/ntut-open-source-club/practical-tools-for-simple-design) framework template for students taking OOPL2024s.
